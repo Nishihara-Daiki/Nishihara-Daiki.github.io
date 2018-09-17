@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="Jaity">
+	<meta name="viewport" content="width=device-width,maximum-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>乱数生成</title>
+</head>
+
+<body>
+	<div id="main">
+		<div>
+			<label>開始値</label><input type="number" value="1" id="s"></input>
+		</div>
+		<div>
+			<label>中間値</label><input type="number" value="" id="m"></input>
+		</div>
+		<div>
+			<label>終了値</label><input type="number" value="" id="e"></input>
+		</div>
+		<button id="start">Start!</button>
+		<h3>結果</h3>
+		<p id="systan"></p>
+		<p id="nextstage"></p>
+		<p id="simple"></p>
+		<div class="exp">
+			<p>※シス単は、開始値〜中間値、中間値＋１〜終了値</p>
+			<p>※ネクステは、開始値〜終了値、それが中間値を越えなければ開始値〜中間値を併記</p>
+			<p>※単純は、開始値〜終了値</p>
+		</div>
+	</div>
+	<script src="jquery.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

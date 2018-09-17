@@ -1,0 +1,137 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: 'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'Meiryo', 'メイリオ', sans-serif;
+	-webkit-text-size-adjust: 100%;
+	font-size: 16px;
+	color: #0f0f0f;
+	background: #f9f9f9;
+}
+
+body {
+	margin: 0 auto;
+	padding: 0 16px;
+	max-width: 816px;
+	min-width: 272px;
+	zoom: 100%;
+}
+
+p {
+	margin: 8px 0 16px;
+}
+
+li {
+	margin: 8px 0 8px 24px;
+}
+
+h2 {
+	margin: 48px 0 24px;
+	background: #ccc;
+}
+
+h3 {
+	margin: 24px 0 16px;
+}
+
+.hr {
+	margin: 16px 0;
+	text-align: right;
+	border-top: solid 2px #333;
+}
+
+.indent {
+	margin-left: 24px;
+}
+
+
+table.contents {
+	width: 100%;
+}
+table.contents td:nth-child(2) {
+	text-align: right;
+	min-width: 64px;
+}
+
+table.withborder {
+	width: 100%;
+	border-collapse: collapse;
+}
+table.withborder td, table.withborder th {
+	padding: 0 4px;
+	border: solid 1px #0f0f0f;
+}
+
+table.season td {
+	padding-right: 24px;
+}
+
+table.livengCost {
+	margin-bottom: 16px;
+}
+table.livengCost td:first-child {
+	padding-right: 40px;
+}
+table.livengCost td:nth-child(2) {
+	min-width: 136px;
+	vertical-align: top;
+}
+
+table.holiday {
+	width: 100%;
+	border-collapse: collapse;
+}
+table.holiday td, table.holiday th {
+	padding: 0 4px;
+	border: solid 1px #0f0f0f;
+	text-align: left;
+}
+
+
+table.elaContact {
+	margin-bottom: 16px;
+}
+table.elaContact th, table.elaContact td {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+table.elaContact th {
+	min-width: 64px;
+	padding-right: 16px;
+	text-align: left;
+	vertical-align: top;
+}
+
+table.session {
+	margin-bottom: 16px;
+	max-width: 100%;
+	word-break: break-all;
+}
+table.session td {
+	padding: 4px 8px;
+}
+tr.weekday {
+	background: #0f0f0f;
+	color: #f9f9f9;
+}
+tr.class {
+	background: #d9d9d9;
+}
+tr.break, tr.workshop {
+	background: #aaa;
+}
+tr.lunch {
+	background: #f0f0f0;
+	text-align: center;
+}
+
+
+
+/* Clearfix */
+.clearfix:after {
+	content: "";
+	clear: both;
+	display: block;
+}

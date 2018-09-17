@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+	-webkit-text-size-adjust: 100%;
+	font-size: 20px;
+/*	color: #fa3;
+	background: #101010;*/
+	color: #804132;
+	background: #faebd7;
+}
+
+body {
+	margin: 0 auto;
+	padding: 0 16px;
+	max-width: 816px;
+	min-width: 272px;
+	zoom: 100%;
+}
+
+li {
+	list-style: none;
+}
+
+#main {
+	padding: 16px;
+}
+
+#main div {
+	margin: 16px 0;
+}
+
+h3 {
+	margin: 4px 0;
+}
+
+input[type="number"] {
+	padding: 8px;
+	width: 120px;
+	vertical-align: middle;
+	font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+	font-size: 1rem;
+	background: #faebd7;
+	border: none;
+	border-bottom: solid 1px #804132;
+	outline: none;
+}
+
+label {
+	margin-right: 16px;
+	display: inline-block;
+}
+
+p {
+	line-height: 1.5;
+}
+
+button {
+	padding: 16px 0;
+	width: 100%;
+	border: none;
+	background: #804132;
+	color: #faebd7;
+	/*outline: none;*/
+	display: block;
+	font-size: 1rem;
+	outline: none;
+}
+
+button:active {
+	padding: 18px 14px 14px 18px;
+}
+
+#systan:before { content: 'シス単: '; }
+#nextstage:before { content: 'ネクステ: '; }
+#simple:before { content: '単純: ' }
+
+.exp p {
+	font-size: 0.6rem;
+}
+
+/* Clearfix */
+.clearfix:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+/*
+header, footer, .setting, .help{
+	display: none;
+}
+div.player {
+	margin: 0;
+	border: none;
+}
+body {
+	padding: 0;
+}
+*/

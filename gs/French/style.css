@@ -1,0 +1,53 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+	-webkit-text-size-adjust: 100%;
+	font-size: 16px;
+/*	color: #fa3;
+	background: #101010;*/
+	color: #804132;
+	background: #faebd7;
+}
+
+body {
+	margin: 0 auto;
+	padding: 0 16px;
+	max-width: 816px;
+	min-width: 272px;
+	zoom: 100%;
+}
+
+li {
+	list-style: none;
+}
+
+
+#ques { font-size: 2rem; }
+@media screen and (min-width:1024px) {
+	#ques{ font-size: 5rem; }
+}
+
+
+/* Clearfix */
+.clearfix:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+/*
+header, footer, .setting, .help{
+	display: none;
+}
+div.player {
+	margin: 0;
+	border: none;
+}
+body {
+	padding: 0;
+}
+*/

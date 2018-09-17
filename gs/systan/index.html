@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex"> <!-- 検索回避 -->
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="Jaity">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/script.js"></script>
+	<title>Systan Kamishibai</title>
+</head>
+
+<body>
+	<header>
+		<h1>Systan Kamishibai</h1>
+		<input type="number" id="from">-
+		<input type="number" id="to">
+		<label>
+			<input id="isRandom" type="checkbox">乱数
+		</label>
+		<button id="load">ロード</button>
+		<span id="time" class="time"></span>
+	</header>
+	<section class="page" id="player">
+		<ul id="scrollbox" class="scrollbox">
+		</ul>
+	</section>
+<!-- 	<footer class="sitefooter">
+		<p>Systan Kamishibai</p>
+		<p>&copy; 2018 Jaity</p>
+	</footer> -->
+</body>
+</html>
