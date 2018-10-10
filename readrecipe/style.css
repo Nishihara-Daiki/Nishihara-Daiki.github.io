@@ -57,6 +57,29 @@ a {
 	line-height: 1.5;
 }
 
+.summary .icon {
+	margin: 0 92px;
+	width: 240px;
+	height: 240px;
+	background-image: url(icon.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.summary .text {
+	width: 600px;
+}
+
+.summary .icon, .summary .text {
+	float: left;
+}
+
+.summary::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
 .howto {
 	position: relative;
 }
