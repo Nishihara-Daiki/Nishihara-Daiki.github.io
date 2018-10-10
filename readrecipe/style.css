@@ -111,6 +111,8 @@ a {
 .movie iframe {
 	margin: 0 auto;
 	display: block;
+	width: 800px;
+	height: 450px;
 }
 
 footer {
@@ -174,3 +176,195 @@ footer small {
 .step2 .stepimg { background-image: url(usage1.png); }
 .step3 .stepimg { background-image: url(usage2.png); }
 
+
+
+@media only screen and (max-width: 480px) {
+body {
+	font-size: 16px;
+	min-width: 100%;
+}
+
+header {
+	height: 256px;
+/*	background-image: url(cooking-veg.jpg);
+	background-size: cover;
+	background-position: center;
+	position: relative;*/
+}
+/*
+header::before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	display: block;
+	background: #000;
+	opacity: 0.8;
+}*/
+
+header h1 {
+	margin-top: -24px;
+/*	margin-bottom: 0;
+	top: 50%;
+	width: 100%;
+	position: absolute;
+	color: #fcfcfc;
+	text-align: center;
+	font-size: 3rem;*/
+}
+/*
+a {
+	text-decoration: none;
+	color: inherit;
+}
+*/
+.main {
+	padding: 40px 16px;
+	/*background: #f8f8f8;*/
+}
+
+.content {
+	/*margin: 0 auto;*/
+	/*padding-bottom: 40px;*/
+	width: auto;
+}
+
+/*.content h2 {
+	margin: 0;
+	font-size: 2rem;
+}
+*/
+/*.content p {
+	font-size: 1.1rem;
+	line-height: 1.5;
+}
+*/
+.summary .icon {
+	/*margin: 0 92px;*/
+	margin: 0 auto;
+	width: 240px;
+	height: 240px;
+/*	background-image: url(icon.png);
+	background-repeat: no-repeat;
+	background-size: contain;*/
+}
+
+.summary .text {
+	/*width: 600px;*/
+	width: auto;
+}
+
+.summary .icon, .summary .text {
+	float: none;
+}
+/*
+.summary::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+*/
+.howto {
+	position: relative;
+}
+.content button {
+	padding: 16px;
+	background: #333;
+	color: #f8f8f8;
+	border: none;
+	outline: none;
+	/*font-size: 1.2rem;*/
+	/*position: absolute;*/
+	margin: 0 auto;
+	display: block;
+}
+
+.content button::after {
+	content: "＞";
+	padding-left: 8px;
+}
+.content button:hover {
+	background: #00c400;
+	cursor: pointer;
+}
+
+.movie {
+	padding: 16px 0;
+}
+
+.movie iframe {
+	margin: 0 auto;
+	/*display: block;*/
+	width: 100%;
+	height: auto;
+}
+/*
+footer {
+	padding: 24px 0;	
+	background: #333;
+	color: #f8f8f8;
+}
+
+footer p {
+	text-align: center;
+}
+
+footer small {
+	color: #c0c0c0;
+}
+*/
+/*.steps::after {
+	content: "";
+	clear: both;
+	display: block;
+}*/
+
+.step {
+	/*width: 30%;*/
+	width: auto;
+	/*float: left;*/
+	float: none;
+}
+
+.stepflow {
+	width: auto;
+	height: auto;
+	float: none;
+	/*position: relative;*/
+}
+
+.stepflow::after {
+/*	content: "";
+	display: block;*/
+	position: static;
+	/*top: 50%;*/
+	/*margin-top: 56px;*/
+	margin: 32px auto 48px;
+	/*width: 16px;*/
+	/*height: 16px;*/
+	/*border-top: solid 4px #00c400;*/
+	/*border-right: solid 4px #00c400;*/
+	transform: rotate(135deg);
+}
+
+.step p {
+	height: auto;
+}
+
+.step .stepimg {
+	width: 100%;
+	padding-top: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.step1 .stepimg {
+	width: 70%;
+	padding-top: 70%;
+	margin: 0 auto;
+	background-size: contain;
+}
+.step2 .stepimg { }
+.step3 .stepimg { }
+
+}
