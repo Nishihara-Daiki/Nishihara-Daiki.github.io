@@ -1,0 +1,143 @@
+body {
+	font-size: 16px;
+	min-width: 1024px;
+}
+
+header {
+	height: 256px;
+	background-image: url(cooking-veg.jpg);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+header::before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	display: block;
+	background: #000;
+	opacity: 0.8;
+}
+
+header h1 {
+	margin-top: -18px;
+	margin-bottom: 0;
+	top: 50%;
+	width: 100%;
+	position: absolute;
+	color: #fcfcfc;
+	text-align: center;
+	font-size: 3rem;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.main {
+	padding: 40px 0;
+	background: #f8f8f8;
+}
+
+.content {
+	margin: 0 auto;
+	padding-bottom: 40px;
+	width: 1024px;
+}
+
+.content h2 {
+	margin: 0;
+	font-size: 2rem;
+}
+
+.content p {
+	font-size: 1.1rem;
+	line-height: 1.5;
+}
+
+.howto {
+	position: relative;
+}
+.content button {
+	padding: 16px;
+	background: #333;
+	color: #f8f8f8;
+	border: none;
+	outline: none;
+	/*font-size: 1.2rem;*/
+	/*position: absolute;*/
+	margin: 0 auto;
+	display: block;
+}
+
+.content button::after {
+	content: "＞";
+	padding-left: 8px;
+}
+.content button:hover {
+	background: #00c400;
+	cursor: pointer;
+}
+
+footer {
+	padding: 24px 0;	
+	background: #333;
+	color: #f8f8f8;
+}
+
+footer p {
+	text-align: center;
+}
+
+footer small {
+	color: #c0c0c0;
+}
+
+.steps::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.step {
+	width: 30%;
+	float: left;
+}
+
+.stepflow {
+	width: 5%;
+	height: 454px;
+	float: left;
+	position: relative;
+}
+
+.stepflow::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: 56px;
+	width: 16px;
+	height: 16px;
+	border-top: solid 4px #00c400;
+	border-right: solid 4px #00c400;
+	transform: rotate(45deg);
+}
+
+.step p {
+	height: 112px;
+}
+
+.step .stepimg {
+	width: 100%;
+	padding-top: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.step1 .stepimg { background-image: url(usage0.png); background-size: 70%;}
+.step2 .stepimg { background-image: url(usage1.png); }
+.step3 .stepimg { background-image: url(usage2.png); }
