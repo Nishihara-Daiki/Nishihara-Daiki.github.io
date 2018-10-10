@@ -81,6 +81,15 @@ a {
 	cursor: pointer;
 }
 
+.movie {
+	padding: 32px;
+}
+
+.movie iframe {
+	margin: 0 auto;
+	display: block;
+}
+
 footer {
 	padding: 24px 0;	
 	background: #333;
@@ -141,3 +150,4 @@ footer small {
 .step1 .stepimg { background-image: url(usage0.png); background-size: 70%;}
 .step2 .stepimg { background-image: url(usage1.png); }
 .step3 .stepimg { background-image: url(usage2.png); }
+
