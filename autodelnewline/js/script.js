@@ -7,7 +7,9 @@ $(function() {
 	});
 
 	$textarea.bind('input propertychange', function() {
-		$textarea.val( $textarea.val().replace(/\n/g, ' ').replace(/ +/g, ' ').replace(/- /g, '') )
+		s = $textarea.val().replace(/\n/g, ' ').replace(/ +/g, ' ').replace(/- /g, '');
+		s = s.replace(/Tab. /g, 'Table. ').replace(/Fig. /g, 'Figure. ');
+		$textarea.val(s);
 		$textarea.select();
 		document.execCommand('copy');
 	});
