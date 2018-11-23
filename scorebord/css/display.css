@@ -1,0 +1,83 @@
+body {
+	position: relative;
+/*	background: #3333cc;
+	color: #fefefe;*/
+}
+
+section {
+	margin-left: -512px;
+	width: 1024px;
+	display: none;
+	transform-origin: top left;
+	font-size: 4rem;
+	position: absolute;
+	top: 0;
+	left: 50%;
+}
+
+
+.score h2 {
+	margin: 40px 0;
+	font-size: 1em;
+	font-weight: normal;
+}
+
+.score table {
+	width: 100%;
+}
+.score table td:first-child {
+	/*width: 80%;*/
+	font-size: 2.5rem;
+}
+.score table td:last-child {
+	text-align: right;
+}
+.score table tr:nth-child(3) {
+	border-bottom: solid 4px #000;
+}
+
+
+.rank {
+	margin: 0 auto;
+	width: 756px;
+}
+
+.rank table {
+	width: 100%;
+}
+
+.rank td {
+	padding: 16px;
+}
+
+.rank td:last-child {
+	text-align: right;
+}
+
+.message p {
+	padding-top: 80px;
+}
+
+
+.order p {
+	width: 100%;
+}
+
+.order .number {
+	margin-top: 120px;
+}
+
+.order .number::before {
+	content: "order: ";
+}
+
+.order .name {
+	margin-top: 40px;
+	font-size: 7rem;
+	/*text-align: center;*/
+}
+
+.order .assign {
+	margin-top: 0px;
+	/*text-align: center;*/
+}
