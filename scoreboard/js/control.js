@@ -219,6 +219,20 @@ function get_display_obj(displaystr) {
 		// 	obj[scoren] = get_total_segment_score(p);
 		// }
 		// break;
+
+
+		for(let i = 0; i < current.ranking_table.length; i++) {
+			let rank = +current.ranking_table[i];
+			if(rank == 0)
+				break;
+			if(rank > 8)
+				continue;
+			let rn = "r" + rank, namen = "name" + rank, scoren = "score" + rank;
+			obj[rn] = "" + rank;
+			obj[namen] = current.players[i][0];
+			obj[scoren] = get_total_segment_score(current.players[i]);
+		}
+		break;
 	case "message":
 		obj = {"text": $("#message-text").val().replace(/\n/g, "<br>")};
 		break;
@@ -227,7 +241,7 @@ function get_display_obj(displaystr) {
 		"scene": displaystr,
 		"content": obj
 	}
-	// console.log(obj);
+	console.log(obj);
 	return content;
 }
 

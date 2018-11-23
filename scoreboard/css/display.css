@@ -38,8 +38,9 @@ section {
 
 
 .rank {
-	margin: 0 auto;
-	width: 756px;
+	/*margin: 0 auto;*/
+	/*width: 756px;*/
+	font-size: 3rem;
 }
 
 .rank table {
@@ -47,7 +48,7 @@ section {
 }
 
 .rank td {
-	padding: 16px;
+	padding: 12px;
 }
 
 .rank td:last-child {

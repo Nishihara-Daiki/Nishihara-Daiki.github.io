@@ -8,7 +8,11 @@ function setLocalStorage(data) {
 }
 
 function getLocalStorage() {
-	return JSON.parse(localStorage.getItem("scorebord_data"))
+	var str = localStorage.getItem("scorebord_data");
+	if(str === null)
+		return {"class": [], "display": {}, "writer": ""};
+	else
+		return JSON.parse(str)
 }
 
 function createURLparam() {}
