@@ -57,13 +57,13 @@ section {
 }
 
 .playerlist tr :nth-child(1) { width: 60px; }
-.playerlist tr :nth-child(2) { width: 100px; }
-.playerlist tr :nth-child(3) { width: 100px; }
-.playerlist tr :nth-child(4) { width: 100px; }
-.playerlist tr :nth-child(5) { width: 100px; }
-.playerlist tr :nth-child(6) { width: 100px; }
-.playerlist tr :nth-child(7) { width: 100px; }
-.playerlist tr :nth-child(8) { width: 60px; }
+.playerlist tr :nth-child(2) { width: 110px; }
+.playerlist tr :nth-child(3) { width: 140px; }
+.playerlist tr :nth-child(4) { width: 90px; }
+.playerlist tr :nth-child(5) { width: 90px; }
+.playerlist tr :nth-child(6) { width: 90px; }
+.playerlist tr :nth-child(7) { width: 90px; }
+.playerlist tr :nth-child(8) { width: 50px; }
 
 .playerlist tr td:nth-child(1) { text-align: center; cursor: pointer;}
 .playerlist tr td:nth-child(2) { cursor: pointer; }

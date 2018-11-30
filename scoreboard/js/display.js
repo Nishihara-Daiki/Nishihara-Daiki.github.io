@@ -32,10 +32,16 @@ $(function() {
 	show();
 });
 
+$(window).on('resize', function() {
+	fitscale();
+});
+
 // windowサイズに合わせて拡大縮小
 function fitscale() {
-	var stdheight = 768;	// 基準の高さ
-	var scale = $(window).height() / stdheight;
+	// var stdheight = 768;	// 基準の高さ
+	var stdwidth = 1366;
+	// var scale = $(window).height() / stdheight;
+	var scale = $(window).width() / stdwidth;
 	$("body").css({"transform": "scale(" + scale + ")"});
 }
 

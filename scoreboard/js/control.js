@@ -33,6 +33,9 @@ var current = {
 		this.__classindex = index;
 	},
 	set order(order) {
+		$trs = $('#playerlist .tbody tr')
+		$trs.eq(this.__order).removeClass("selected");
+		$trs.eq(order).addClass("selected");
 		this.__order = order;
 	},
 	set score(order_es_pcs_deduction_list) {
@@ -75,8 +78,10 @@ $(function() {
 		setLocalStorage(storage);
 	});
 
+
 	update();
 	create_player_list();
+	current.order = 0;
 });
 
 
@@ -134,10 +139,11 @@ function create_player_list() {
 		var $trs = $('#playerlist .tbody tr');
 		var $thisparent = $(this).parent();
 		var index = $trs.index($thisparent);
-		$trs.removeClass("selected");
-		$thisparent.addClass("selected");
+		// $trs.removeClass("selected");
+		// $thisparent.addClass("selected");
 		current.order = index;
 	});
+	// $('#playerlist .tbody tr').eq(0).addClass("selected");
 	reranking();
 }
 

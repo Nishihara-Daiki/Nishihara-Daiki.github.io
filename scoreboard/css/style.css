@@ -9,6 +9,10 @@ html, body {
 	font-size: 16px;
 }
 
+html,body,input,textarea,option,select {
+	font-family: "游ゴシック Medium","Yu Gothic Medium","游ゴシック体",YuGothic,sans-serif;
+}
+
 .clearfix::after {
 	content: "";
 	display: block;
