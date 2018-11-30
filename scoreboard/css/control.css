@@ -1,3 +1,6 @@
+body {
+	position: relative;
+}
 
 section {
 	padding: 8px 24px;
@@ -107,6 +110,12 @@ button {
 	font-size: 1em;
 	text-decoration: none;
 	display: block;
+	outline: none;
+}
+
+button.on {
+	background-color: #999;
+	/*color: #333;*/
 }
 
 .command a:first-child button {
@@ -133,7 +142,90 @@ button {
 	float: left;
 }
 
+.command .special-switch-buttons {
+	float: right;
+	width: 80px;
+}
+
+.command .special-switch-buttons button {
+	margin: 0 0 8px 16px;
+	width: 64px;
+	float: left;
+}
+/*
+.command .special-switch-buttons div {
+	margin: 0 0 8px 8px;
+	width: 120px;
+	float: left;
+}
+
+.command .special-switch-buttons div input {
+	width: 32px;
+	height: 24px;
+	padding: 8px;
+	font-size: 1em;
+}
+*/
 .submit-button button {
 	margin: 0 auto;
 	display: block;
 }
+
+.auto-popup {
+	padding: 24px 5%;
+	width: 30%;
+	top: 20px;
+	left: 30%;
+	position: absolute;
+	background: white;
+	box-shadow: 0 0  2px 2px #ccc;
+	display: none;
+}
+
+.auto-popup h3 {
+	margin: 32px 0 8px;
+	font-weight: normal;
+}
+
+.auto-popup input {
+	width: 80px;
+	padding: 4px;
+	font-size: 1em;
+}
+/*
+.auto-popup ul::after {
+	content: '';
+	clear: both;
+	display: block;
+}
+*/
+.auto-popup li {
+	margin: 8px 0;
+	/*width: 50%;*/
+	/*float: left;*/
+	list-style: none;
+}
+
+.auto-popup label {
+	width: 100%;
+	display: block;
+}
+
+.auto-popup input[type="checkbox"] {
+	width: 16px;
+}
+
+.popup-buttons {
+	margin: 40px 0 16px;
+}
+.popup-buttons::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.popup-buttons button {
+	width: 120px;
+}
+.popup-buttons button:first-child { float: left; }
+.popup-buttons button:last-child { float: right; }

@@ -42,6 +42,13 @@
 				<a href="edit.html" target="_blank"><button>編集画面を開く</button></a>
 			</div>
 			<textarea id="message-text" placeholder="メッセージ"></textarea>
+			<div class="special-switch-buttons" id="special-switch-buttons">
+				<button value="none">消す</button>
+				<button value="auto" id="auto-button">自動</button>
+<!-- 				<div>
+					<input type="numer">〜<input type="number">
+				</div> -->
+			</div>
 			<div class="switch-buttons" id="switch-buttons">
 				<button value="order">滑走者</button>
 				<button value="rank">暫定順位</button>
@@ -58,7 +65,7 @@
 			</div>
 		</section>
 		<section class="submit-button" id="submit-button">
-			<button>↑↑↑</button>
+			<button>↑↑ 送信 ↑↑</button>
 		</section>
 		<section class="preview">
 			<h2>プレビュー</h2>
@@ -66,6 +73,24 @@
 				<iframe id="preview-iframe" src=""></iframe>
 			</div>
 		</section>
+	</div>
+
+	<div class="auto-popup" id="auto-popup">
+		<h3>表示させる画面</h3>
+		<ul class="auto-popup-options" id="auto-popup-options">
+			<li><label><input type="checkbox" value="order">滑走者</label></li>
+			<li><label><input type="checkbox" value="score" checked>個人スコア</label></li>
+			<li><label><input type="checkbox" value="rank" checked>暫定順位</label></li>
+			<li><label><input type="checkbox" value="message">メッセージ</label></li>
+		</ul>
+		<h3>滑走者範囲</h3>
+		<input id="auto-popup-start" value="1">〜<input id="auto-popup-end" value="6">
+		<h3>画面切り替え間隔</h3>
+		<input value="5" id="auto-popup-interval">秒
+		<div class="popup-buttons">
+			<button id="auto-popup-cancel">キャンセル</button>
+			<button id="auto-popup-ok">開始</button>
+		</div>
 	</div>
 
 	<script src="js/jquery-2.1.4.min.js"></script>

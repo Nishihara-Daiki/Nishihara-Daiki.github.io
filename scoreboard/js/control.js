@@ -3,6 +3,7 @@ var current = {
 	'__preview': "",
 	'__classindex': 0,	// クラス番号
 	'__order': 0,		// 滑走順
+	'__auto_timeid': undefined,	// 自動画面切り替えのタイマーID
 	get players() {
 		return this.class[this.__classindex].players;
 	},
@@ -46,9 +47,13 @@ var current = {
 	},
 	set preview(obj) { this.__preview = obj; },
 	get preview() { return this.__preview },
-	// set display(display) {
-
-	// }
+	set autotimeid(autotimeid) {
+		clearTimeout(this.__auto_timeid);
+		this.__auto_timeid = autotimeid;
+	},
+	get isauto() {
+		return this.__auto_timeid !== undefined;
+	}
 }
 
 $(function() {
@@ -64,12 +69,14 @@ $(function() {
 		create_player_list();
 	});
 
-	$('#switch-buttons button').click(function() {
+	$('#switch-buttons button, #special-switch-buttons button:first-child').click(function() {
 		var content = get_display_obj($(this).val());
 		current.preview = content;
 		url = "display.html?scorebord_data=" + encodeURI(JSON.stringify(current.preview));
 		$('#preview-iframe').attr("src", url);
-		// console.log(current.preview);
+		$('#switch-buttons button').removeClass('on');
+		$(this).addClass('on');
+		$('#special-switch-buttons button:first-child').removeClass('on');
 	});
 
 	$('#submit-button button').click(function() {
@@ -78,6 +85,64 @@ $(function() {
 		setLocalStorage(storage);
 	});
 
+	$('#auto-button').click(function() {
+		if(current.isauto) {
+			current.autotimeid = undefined;
+			$('#auto-button').removeClass('on');
+		}
+		else {
+			$('#auto-popup').css({"display": "block"});
+		}
+	});
+
+	$('#auto-popup-cancel').click(function() {
+		$('#auto-popup').css({"display": "none"});
+	});
+
+	$('#auto-popup-ok').click(function() {
+		$('#auto-button').addClass('on');
+		var now = 0;
+		var autoplaylist = [];
+
+		var interval = $('#auto-popup-interval').val() * 1000;
+		var start = +$('#auto-popup-start').val() - 1;
+		var end = +$('#auto-popup-end').val() - 1;
+		$('#auto-popup-options input:checked').each(function() {
+			val = $(this).val();
+			switch(val) {
+				case "order":
+				case "score":
+				for(let i = start; i <= end; i++)
+					autoplaylist.push([val, i]);
+				break;
+				default:
+				autoplaylist.push([val]);
+			}
+		});
+		// console.log(autoplaylist)
+
+
+		$('#auto-popup').css({"display": "none"});
+
+		current.autotimeid = undefined;	// 現在動いてるタイマーストップ
+
+		(function next() {
+			if(autoplaylist.length == 0) {
+				$('#auto-button').removeClass('on');
+				return;
+			}
+			let playernum = autoplaylist[now][1];
+			if(playernum !== undefined)
+				$('#playerlist .tbody tr').eq(playernum).children('td').click();	// 選手選択
+			$('#switch-buttons button[value="' + autoplaylist[now][0] + '"').click();
+			$('#submit-button button').click();
+			now++;
+			now %= autoplaylist.length;
+			if(interval < 1000) interval = 1000;
+			current.autotimeid = setTimeout(next, interval);
+		})();
+
+	});
 
 	update();
 	create_player_list();
