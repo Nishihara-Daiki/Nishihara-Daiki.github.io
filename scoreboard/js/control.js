@@ -81,7 +81,6 @@ $(function() {
 
 	update();
 	create_player_list();
-	current.order = 0;
 });
 
 
@@ -145,6 +144,7 @@ function create_player_list() {
 	});
 	// $('#playerlist .tbody tr').eq(0).addClass("selected");
 	reranking();
+	current.order = 0;
 }
 
 
