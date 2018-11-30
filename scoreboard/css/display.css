@@ -78,8 +78,8 @@ section {
 }
 
 /*.rank td:nth-child(3) { border-right: solid 1px #000;}*/
-.rank td:nth-child(3n) { text-align: right; }
-.rank td:nth-child(3n+1)::after { content: "." }
+/*.rank td:nth-child(3n) { text-align: right; }*/
+/*.rank td:nth-child(3n+1)::after { content: "." }*/
 
 
 .message p {
