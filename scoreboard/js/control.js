@@ -102,6 +102,7 @@ $(function() {
 	$('#auto-popup-ok').click(function() {
 		$('#auto-button').addClass('on');
 		var now = 0;
+		var isautosubumit = false;
 		var autoplaylist = [];
 
 		var interval = $('#auto-popup-interval').val() * 1000;
@@ -124,12 +125,19 @@ $(function() {
 			}
 		});
 
+		$('#submit-button button').click(function(){ 
+			if(isautosubumit == false) {
+				now = 0;
+				isautosubumit = true;
+				next();
+			}
+		});
 
 		$('#auto-popup').css({"display": "none"});
 
 		current.autotimeid = undefined;	// 現在動いてるタイマーストップ
 
-		(function next() {
+		function next() {
 			if(autoplaylist.length == 0) {
 				$('#auto-button').removeClass('on');
 				return;
@@ -138,12 +146,14 @@ $(function() {
 			if(playernum !== undefined)
 				$('#playerlist .tbody tr').eq(playernum).children('td:nth-child(2)').click();	// 選手選択
 			$('#switch-buttons button[value="' + autoplaylist[now][0] + '"').click();
-			$('#submit-button button').click();
+			if(isautosubumit)
+				$('#submit-button button').click();
 			now++;
 			now %= autoplaylist.length;
 			if(interval < 1000) interval = 1000;
 			current.autotimeid = setTimeout(next, interval);
-		})();
+		}
+		next();
 
 	});
 
