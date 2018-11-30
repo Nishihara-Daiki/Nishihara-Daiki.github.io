@@ -59,7 +59,7 @@ section {
 	background: #ccc;
 }
 
-.playerlist tr.retired {
+.playerlist tr.retired, .playerlist tr.retired input {
 	color: red;
 }
 

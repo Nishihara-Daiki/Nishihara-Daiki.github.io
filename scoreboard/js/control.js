@@ -111,9 +111,13 @@ $(function() {
 			val = $(this).val();
 			switch(val) {
 				case "order":
-				case "score":
 				for(let i = start; i <= end; i++)
 					autoplaylist.push([val, i]);
+				break;
+				case "score":
+				for(let i = start; i <= end; i++)
+					if(current.players[i][5] === false)
+						autoplaylist.push([val, i]);
 				break;
 				default:
 				autoplaylist.push([val]);
@@ -132,7 +136,7 @@ $(function() {
 			}
 			let playernum = autoplaylist[now][1];
 			if(playernum !== undefined)
-				$('#playerlist .tbody tr').eq(playernum).children('td').click();	// 選手選択
+				$('#playerlist .tbody tr').eq(playernum).children('td:nth-child(2)').click();	// 選手選択
 			$('#switch-buttons button[value="' + autoplaylist[now][0] + '"').click();
 			$('#submit-button button').click();
 			now++;
@@ -198,6 +202,8 @@ function create_player_list() {
 		var deduction = $inputs.eq(2).val();
 		current.score = [order,es,pcs,deduction];
 		var tss = calc_total_segment_score(es, pcs, deduction);
+		// if(current.players[order][5])
+		// 	tss = "";
 		update_score(order, tss);
 	});
 
@@ -217,6 +223,7 @@ function create_player_list() {
 		var index = $trs.index($thisparent);
 		var tf = current.players[index][5] = !current.players[index][5];
 		$trs.eq(index).toggleClass("retired");
+		reranking();
 	});
 
 	// $('#playerlist .tbody tr').eq(0).addClass("selected");
@@ -234,7 +241,7 @@ function calc_total_segment_score(es, pcs, deduction) {
 
 
 function get_total_segment_score(player) {
-	if(player.length >= 5)
+	if(player.length >= 5 && player[5] == false)
 		return calc_total_segment_score(player[2], player[3], player[4]);
 	else
 		return "";
