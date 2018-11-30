@@ -59,6 +59,10 @@ section {
 	background: #ccc;
 }
 
+.playerlist tr.retired {
+	color: red;
+}
+
 .playerlist tr :nth-child(1) { width: 60px; }
 .playerlist tr :nth-child(2) { width: 110px; }
 .playerlist tr :nth-child(3) { width: 140px; }

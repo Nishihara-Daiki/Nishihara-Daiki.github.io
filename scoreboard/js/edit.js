@@ -24,11 +24,11 @@ function excel2classlist(str) {
 	for(let player of str.split("\n")) {
 		p = player.split("\t");
 		if(p[0] in classname) {
-			classlist[classname[p[0]]]["players"].push([p[1], p[2], "", ""]);
+			classlist[classname[p[0]]]["players"].push([p[1], p[2], "", "", "", false]);
 		}
 		else {
 			classname[p[0]] = classlist.length;
-			classlist.push({"class_name": p[0], "players": [[p[1], p[2], "", ""]]});
+			classlist.push({"class_name": p[0], "players": [[p[1], p[2], "", "", "", false]]});
 		}
 	}
 	return classlist;

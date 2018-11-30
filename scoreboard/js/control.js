@@ -119,7 +119,6 @@ $(function() {
 				autoplaylist.push([val]);
 			}
 		});
-		// console.log(autoplaylist)
 
 
 		$('#auto-popup').css({"display": "none"});
@@ -173,7 +172,10 @@ function create_player_list() {
 			tss = calc_total_segment_score(es, pcs, deduction);
 			rank = 0;
 		}
-		let s = '<tr>';
+		let cls = '';
+		if(player[5] == true)
+			cls = ' class="retired"';
+		let s = '<tr' + cls + '>';
 		s += '<td>' + (i+1) + '</td>';
 		s += '<td>' + player[0] + '</td>';
 		s += '<td>' + player[1] + '</td>';
@@ -207,6 +209,16 @@ function create_player_list() {
 		// $thisparent.addClass("selected");
 		current.order = index;
 	});
+
+
+	$('#playerlist .tbody tr td:first-child').click(function() {
+		var $trs = $('#playerlist .tbody tr');
+		var $thisparent = $(this).parent();
+		var index = $trs.index($thisparent);
+		var tf = current.players[index][5] = !current.players[index][5];
+		$trs.eq(index).toggleClass("retired");
+	});
+
 	// $('#playerlist .tbody tr').eq(0).addClass("selected");
 	reranking();
 	current.order = 0;
@@ -261,10 +273,11 @@ function get_display_obj(displaystr) {
 	switch(displaystr) {
 	case "order":
 		obj = {
-			"number": "" + (order + 1),
+			"number": player[5] ? "Retired." : "order: " + (order + 1),
 			"name": player[0],
 			"assign": player[1]
 		};
+		console.log(player[5])
 		break;
 	case "score":
 		obj = {
@@ -295,7 +308,7 @@ function get_display_obj(displaystr) {
 		for(let i = 0; i < current.ranking_table.length; i++) {
 			let rank = +current.ranking_table[i];
 			if(rank == 0)
-				break;
+				continue;
 			if(rank > 8)
 				continue;
 			let rn = "r" + rank, namen = "name" + rank, scoren = "score" + rank;
@@ -315,15 +328,3 @@ function get_display_obj(displaystr) {
 	console.log(obj);
 	return content;
 }
-
-
-		// "content": {
-		// 	"r1": "1", "name1": "羽生 結弦", "score1": "214.96",
-		// 	"r2": "2", "name2": "宇野 昌磨", "score2": "200.43",
-		// 	"r3": "3", "name3": "パトリック チャン", "score3": "175.29",
-		// 	"r4": "4", "name4": "高橋 大輔", "score4": "150.44",
-		// 	"r5": "5", "name5": "中浦 哲志", "score5": "50.43",
-		// 	"r6": "6", "name6": "屋金 崚太", "score6": "17.98",
-		// 	"r7": "7", "name7": "山田 太郎", "score7": "12.29",
-		// 	"r8": "8", "name8": "麻生 太郎", "score8": "4.33"
-		// }
