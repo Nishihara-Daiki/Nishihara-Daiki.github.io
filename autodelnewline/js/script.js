@@ -10,6 +10,7 @@ $(function() {
 		s = $textarea.val().replace(/\n/g, ' ').replace(/ +/g, ' ').replace(/- /g, '');
 		s = s.replace(/Tab. /g, 'Table ').replace(/Fig. /g, 'Figure ');
 		s = s.replace(/et al./g, 'et al');
+		s = s.replace(/\. /g, '.\n');
 		$textarea.val(s);
 		$textarea.select();
 		document.execCommand('copy');
