@@ -8,7 +8,7 @@ var funcs = {
 		$output.val( $input.val().replace(/\n/g, ' ').replace(/ +/g, ' ').replace(/- /g, '') )
 	},
 	tab2tex: function($input, $output) {
-		$output.val($input.val().split("\n").map(b => b.split("\t").map(a => isNaN(a) ? a : "$" + a + "$").join(" & ") + " \\\\\n").join(""))
+		$output.val($input.val().split("\n").map(b => b.split("\t").map(a => isNaN(a) || a === "" ? a : "$" + a + "$").join(" & ") + " \\\\\n").join(""))
 	}
 };
 
