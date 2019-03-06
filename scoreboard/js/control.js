@@ -3,7 +3,8 @@ var current = {
 	'__preview': "",
 	'__classindex': 0,	// クラス番号
 	'__order': 0,		// 滑走順
-	'__auto_timeid': undefined,	// 自動画面切り替えのタイマーID
+	'__auto_timer_id': undefined,	// 自動画面切り替えのタイマーID
+	'__auto_timer_status': 'stop',	// stop / standby / run
 	get players() {
 		return this.class[this.__classindex].players;
 	},
@@ -47,13 +48,23 @@ var current = {
 	},
 	set preview(obj) { this.__preview = obj; },
 	get preview() { return this.__preview },
-	set autotimeid(autotimeid) {
-		clearTimeout(this.__auto_timeid);
-		this.__auto_timeid = autotimeid;
+	set autotimerid(autotimerid) {
+		clearTimeout(this.__auto_timer_id);
+		this.__auto_timer_id = autotimerid;
 	},
-	get isauto() {
-		return this.__auto_timeid !== undefined;
+	get autotimerstatus() { return this.__auto_timer_status; },
+	set autotimerstatus(status) {
+		if(this.__auto_timer_status === 'stop' && status === 'run') {
+			console.log('banned stop to run');
+			return;
+		}
+		if(status === 'stop')
+			this.autotimerid = undefined;
+		this.__auto_timer_status = status;
 	}
+	// get isauto() {
+	// 	return this.__auto_timer_id !== undefined;
+	// }
 }
 
 $(function() {
@@ -79,6 +90,12 @@ $(function() {
 		$('#special-switch-buttons button:first-child').removeClass('on');
 	});
 
+	$('#special-switch-buttons button:first-child').click(function() {
+		current.autotimerstatus = 'stop';
+		$('#auto-button').removeClass('on');
+		$('#switch-buttons').removeClass('auto');
+	});
+
 	$('#submit-button button').click(function() {
 		var storage = current.storage;
 		storage.display = current.preview;
@@ -86,11 +103,14 @@ $(function() {
 	});
 
 	$('#auto-button').click(function() {
-		if(current.isauto) {
-			current.autotimeid = undefined;
+		switch(current.autotimerstatus) {
+		case 'run':
+		case 'standby':
+			current.autotimerstatus = 'stop';
 			$('#auto-button').removeClass('on');
-		}
-		else {
+			$('#switch-buttons').removeClass('auto');
+			break;
+		case 'stop':
 			$('#auto-popup').css({"display": "block"});
 		}
 	});
@@ -101,9 +121,11 @@ $(function() {
 
 	$('#auto-popup-ok').click(function() {
 		$('#auto-button').addClass('on');
+		$('#switch-buttons').addClass('auto');
 		var now = 0;
-		var isautosubumit = false;
+		// var isautosubumit = false;
 		var autoplaylist = [];
+		current.autotimerstatus = 'standby';
 
 		var interval = $('#auto-popup-interval').val() * 1000;
 		var start = +$('#auto-popup-start').val() - 1;
@@ -126,32 +148,34 @@ $(function() {
 		});
 
 		$('#submit-button button').click(function(){ 
-			if(isautosubumit == false) {
+			if(current.autotimerstatus === 'standby') {
 				now = 0;
-				isautosubumit = true;
+				current.autotimerstatus = 'run';
 				next();
 			}
 		});
 
 		$('#auto-popup').css({"display": "none"});
 
-		current.autotimeid = undefined;	// 現在動いてるタイマーストップ
+		// current.autotimerid = undefined;	// 現在動いてるタイマーストップ
 
 		function next() {
+			current.autotimerid = undefined;
 			if(autoplaylist.length == 0) {
 				$('#auto-button').removeClass('on');
+				$('#switch-buttons').removeClass('auto');
 				return;
 			}
 			let playernum = autoplaylist[now][1];
 			if(playernum !== undefined)
 				$('#playerlist .tbody tr').eq(playernum).children('td:nth-child(2)').click();	// 選手選択
 			$('#switch-buttons button[value="' + autoplaylist[now][0] + '"').click();
-			if(isautosubumit)
+			if(current.autotimerstatus === 'run')
 				$('#submit-button button').click();
 			now++;
 			now %= autoplaylist.length;
 			if(interval < 1000) interval = 1000;
-			current.autotimeid = setTimeout(next, interval);
+			current.autotimerid = setTimeout(next, interval);
 		}
 		next();
 
@@ -244,7 +268,7 @@ function create_player_list() {
 
 function calc_total_segment_score(es, pcs, deduction) {
 	if(es !== "" && pcs !== "" && deduction !== "")
-		return Math.abs(+es)+Math.abs(+pcs)-Math.abs(+deduction);
+		return (Math.abs((+es)*100)+Math.abs((+pcs)*100)-Math.abs((+deduction)*100))/100;
 	else 
 		return "";
 }

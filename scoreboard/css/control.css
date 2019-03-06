@@ -138,6 +138,22 @@ button.on {
 .command .switch-buttons {
 	float: right;
 	width: 240px;
+	position: relative;
+}
+
+.command .switch-buttons.auto::before {
+	content: 'auto';
+	padding-left: 8px;
+	width: 240px;
+	min-height: 100px;
+	height: 115%;
+	color: red;
+	background: rgba(255,0,0,0.2);
+	line-height: 1;
+	font-size: 16px;
+	position: absolute;
+	top: -15%;
+	left: 0;
 }
 
 .command .switch-buttons button {

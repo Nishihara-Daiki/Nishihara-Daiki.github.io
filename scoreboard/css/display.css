@@ -8,7 +8,7 @@ body {
 /*	background: #3333cc;
 	color: #fefefe;*/
 	transform-origin: center left;
-	background: #333;
+	background: #000;
 }
 
 section {
@@ -89,7 +89,7 @@ section {
 
 
 .order p {
-	width: 100%;
+	/*width: 100%;*/
 }
 
 .order > * {
