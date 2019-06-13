@@ -11,7 +11,7 @@ body {
 header {
 	padding: 16px;
 	/*background: #4169e1;*/
-	background-image: url(img/header.jpg);
+	background-image: url(img/header480.jpg);
 	background-position: center;
 	background-size: cover;
 	/*color: #fefefe;*/
@@ -73,6 +73,10 @@ h1 {
 
 
 @media only screen and (min-width: 1024px) {
+
+header {
+	background-image: url(img/header.jpg);
+}
 
 h1 {
 	margin-bottom: 32px;
