@@ -1,5 +1,4 @@
 html {
-	/*background: #f5deb3;*/
 	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
 }
 
@@ -10,51 +9,26 @@ body {
 
 header {
 	padding: 16px;
-	/*background: #4169e1;*/
 	background-image: url(img/header480.jpg);
 	background-position: center;
 	background-size: cover;
-	/*color: #fefefe;*/
-	/*position: relative;*/
 }
-/*
-header .icon {
-	margin: 0 auto;
-	width: 128px;
-	height: 128px;
-	background-image: url(img/icon.jpg);
-	background-size: contain;
-	border-radius: 64px;
-}
-*/
+
 section {
 	margin: 0 auto;
 	max-width: 1024px;
 	padding: 8px 16px;
 }
-/*
-h1 {
-	margin: 16px auto 0;
-	max-width: 1024px;
-	font-weight: normal;
-	text-align: center;
-	font-size: 1.5rem;
-}*/
 
 h1 {
 	margin: 128px auto 0;
 	max-width: 1024px;
 	color: #333366;
-/*
-	position: absolute;
-	bottom: 10%;
-	left: 10%;*/
 	font-size: 1.5rem;
 }
 
 h2 {
 	font-weight: normal;
-	/*text-align: center;*/
 }
 
 li {
