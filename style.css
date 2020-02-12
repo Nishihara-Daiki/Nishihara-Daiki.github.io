@@ -29,11 +29,25 @@ h1 {
 }
 
 h2 {
+	padding: 8px 0;
+	font-weight: normal;
+	border-bottom: solid 1px #ccc;
+}
+
+h3 {
+	margin-top: 32px;
 	font-weight: normal;
 }
 
-li {
+ul li {
 	margin: 8px 0;
+	list-style: none;
+}
+
+ol li {
+	margin-top: 16px;
+	margin-left: -8px;
+	padding-left: 8px;
 }
 
 a {
@@ -44,6 +58,34 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+
+h4 {
+	margin: 4px 0;
+	padding: 0;
+	font-size: 1.2rem;
+}
+
+.authors::after { content: '.'; }
+.publishier::after { content: ','; }
+.publication time::after { content: '.'; }
+
+.publication button {
+	padding: 1px 8px;
+	border: none;
+	border-radius: 8px;
+	color: #fefefe;
+	font-size: 1rem;
+	outline: none;
+	cursor:	pointer;
+}
+
+button.slide::after { content: 'slide'; }
+button.paper::after { content: 'paper'; }
+button.poster::after { content: 'poster'; }
+
+button.slide { background: #ff6699; }
+button.paper { background: #6699ff; }
+button.poster { background: #ff9966; }
 
 footer {
 	margin-top: 32px;
