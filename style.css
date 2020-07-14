@@ -141,6 +141,8 @@ button.slide { background: #ff6699; }
 button.paper { background: #6699ff; }
 button.poster { background: #ff9966; }
 
+button.to-appear { background: #888; }
+
 footer {
 	margin-top: 32px;
 	padding: 32px 0;
