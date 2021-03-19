@@ -123,6 +123,13 @@ h4 a, h4 a:hover {
 .publishier::after { content: ','; }
 .publication time::after { content: '.'; }
 
+.publication .award {
+	padding: 4px;
+	font-weight: bold;
+	background: linear-gradient(45deg, #B67B03 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #B67B03 90% 100%);
+	font-size: 1rem;
+}
+
 .publication button {
 	padding: 1px 8px;
 	border: none;
