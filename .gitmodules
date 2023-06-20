@@ -1,0 +1,3 @@
+[submodule "csv-comparator"]
+	path = csv-comparator
+	url = https://github.com/Nishihara-Daiki/csv-comparator
