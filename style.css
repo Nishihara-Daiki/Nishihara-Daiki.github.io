@@ -144,10 +144,12 @@ h4 a, h4 a:hover {
 button.slide::after { content: 'slide'; }
 button.paper::after { content: 'paper'; }
 button.poster::after { content: 'poster'; }
+button.demo::after { content: 'demo'; }
 
 button.slide { background: #ff6699; }
 button.paper { background: #6699ff; }
 button.poster { background: #ff9966; }
+button.demo { background: #9966ff; }
 
 button.to-appear { background: #888; }
 
